@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseManager.cs" />
     <Compile Include="ContextFactory.cs" />
     <Compile Include="LawEnforcementContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

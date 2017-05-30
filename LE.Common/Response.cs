@@ -22,7 +22,7 @@ namespace LE.Common
         public string Message { get; set; }
 
         /// <summary>
-        /// 返回数据
+        /// 返回数据,动态数据类型，类似于匿名类，只是匿名类的字段可读不可写。动态类型可以
         /// </summary>
         public dynamic Data { get; set; }
 

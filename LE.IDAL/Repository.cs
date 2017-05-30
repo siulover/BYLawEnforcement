@@ -138,9 +138,11 @@ namespace LE.IDAL
         /// <param name="pageSize">每页记录数。必须大于1</param>
         /// <param name="pageIndex">页码。首页从1开始，页码必须大于1</param>
         /// <param name="totalNumber">总记录数</param>
-        /// <returns></returns>
+        /// <returns>用IQueryable,是因为在LinQ中，虽然前面很多查询表达式等等，但是都没有执行，返回的IQueryable也是没有数据的，直到执行ToList时才会去数据库取当前页</returns>
         public IQueryable<T> FindPageList(int pageSize, int pageIndex, out int totalNumber)
         {
+            //IQuaryable只有展开的时候才会去查询数据库，比如tolist、toarray，foreach等等
+            //where一个加一个，和拼接字符串一样是不会查询的
             if (pageIndex < 1) pageIndex = 1;
             if (pageSize < 1) pageSize = 10;
             IQueryable<T> _list = Dbcontext.Set<T>();
