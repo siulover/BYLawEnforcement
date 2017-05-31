@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Case.cs" />
+    <Compile Include="CaseTrace.cs" />
     <Compile Include="Departments.cs" />
     <Compile Include="Officials.cs" />
     <Compile Include="Orgnizations.cs" />

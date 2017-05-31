@@ -9,6 +9,11 @@ namespace Model
 {
     public class Officials
     {
+        public string OffNo { get; set; }
+        public string Offname { get; set; }
+        public string DepNo { get; set; }
+        public string MobileNo { get; set; }
+        public string OffPwd { get; set; }
 
     }
 }
