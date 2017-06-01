@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
-namespace Model
+namespace BYLawEnforcement.Areas.BaseManage.Models
 {
     /// <summary>
     /// 工作人员

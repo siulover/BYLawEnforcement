@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace BYLawEnforcement.Areas.BaseManage.Models
 {
     /// <summary>
     /// 部门
