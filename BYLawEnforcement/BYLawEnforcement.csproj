@@ -142,6 +142,10 @@
       <Project>{50c9e82a-06ea-492c-aa88-9da5acfae3ba}</Project>
       <Name>LE.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LE.IDAL\LE.IDAL.csproj">
+      <Project>{639236b6-9c11-4a7e-a32f-320dc65bcc5e}</Project>
+      <Name>LE.IDAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

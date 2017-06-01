@@ -18,7 +18,16 @@ namespace LE.Core
         /// <summary>
         /// 数据仓储类,在数据层中定义的数据仓储类，类似以前多层模式项目的数据操作接口。
         /// </summary>
-        protected Repository<T> Repository;
+        public  Repository<T> Repository;
+
+        public Repository<T> Repositorys
+        {
+            get
+            {
+                return Repository;
+            }
+           
+        }
 
         /// <summary>
         /// 默认构造函数，this是在执行本构造函数前会先执行本身的带参数的构造方法。
@@ -152,5 +161,6 @@ namespace LE.Core
             return Repository.Count();
         }
 
+        
     }
 }

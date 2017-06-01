@@ -317,10 +317,15 @@ namespace LE.IDAL
         /// <summary>
         /// 记录是否存在
         /// </summary>
-        /// <param name="predicate">表达式</param>
+        /// <param name="predicate">表达式，Func<t,bool>为一个匿名函数泛型的委托一个是,T为输入值类型，bool返回值类型。多个输入参数时为Func<T, T2，bool></param>
         /// <returns></returns>
         public bool IsContains(Expression<Func<T, bool>> predicate)
         {
+
+            //Func<int, bool> myFunc = x => x == 5;
+            //bool result = myFunc(4);
+            //returns false of course
+
             return Count(predicate) > 0;
         }
         #endregion

@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Convert.cs" />
     <Compile Include="EnumItemDetails.cs" />
+    <Compile Include="OrderParam.cs" />
     <Compile Include="Paging.cs" />
     <Compile Include="PictureExc.cs" />
     <Compile Include="Response.cs" />

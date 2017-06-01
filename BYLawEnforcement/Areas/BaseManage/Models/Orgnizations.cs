@@ -21,7 +21,7 @@ namespace BYLawEnforcement.Areas.BaseManage.Models
         /// 组织机构名字
         /// </summary>
         [Required]
-        [StringLength(50,MinimumLength =6,ErrorMessage = "{0}长度为{2}-{1}个字符")]
+        [StringLength(50,MinimumLength =2,ErrorMessage = "{0}长度为{2}-{1}个字符")]
         [Display(Name ="组织机构名称")]
         public string OrgName { get; set; }
 
