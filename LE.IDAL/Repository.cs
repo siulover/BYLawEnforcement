@@ -192,7 +192,7 @@ namespace LE.IDAL
         /// <param name="pageIndex">页码。首页从1开始，页码必须大于1</param>
         /// <param name="totalNumber">总记录数</param>
         /// <param name="where">查询表达式</param>
-        /// <param name="order">排序键</param>
+        /// <param name="order">排序键 传入时使用 u=>u.ordercolnae</param>
         /// <param name="asc">是否正序</param>
         public IQueryable<T> FindPageList<TKey>(int pageSize, int pageIndex, out int totalNumber, Expression<Func<T, bool>> where, Expression<Func<T, TKey>> order, bool asc)
         {

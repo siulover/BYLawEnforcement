@@ -151,7 +151,7 @@ namespace LE.Core
             paging.Items = Repository.FindPageList(paging.PageSize, paging.PageIndex, out paging.TotalNumber).ToList();
             return paging;
         }
-
+        
         /// <summary>
         /// 总记录数
         /// </summary>

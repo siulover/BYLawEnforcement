@@ -38,7 +38,8 @@ namespace BYLawEnforcement.Areas.BaseManage.Models
             //如x=>Console.writeln(x);类似的感觉
             //只有在Lambda有一个输入参数时，括号才是可选的；否则括号是必需的。两个或更多输入参数由括号中的逗号分隔:
             //(x, y) => x == y
-            bool b = false;
+           
+            
             return base.Repositorys.IsContains(u => u.OrgName.ToUpper() == name.ToUpper());
         }
     }
