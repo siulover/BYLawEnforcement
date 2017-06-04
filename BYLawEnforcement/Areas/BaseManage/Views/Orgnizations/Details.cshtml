@@ -1,0 +1,50 @@
+﻿@model Model.Orgnizations
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Orgnizations</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgDuty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgDuty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgDes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgFlag)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrgNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

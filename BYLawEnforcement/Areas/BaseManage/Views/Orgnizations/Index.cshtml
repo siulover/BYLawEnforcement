@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Model.Orgnizations>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrgDuty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrgDes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrgFlag)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrgName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrgDuty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrgDes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrgFlag)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrgNo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrgNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrgNo })
+        </td>
+    </tr>
+}
+
+</table>

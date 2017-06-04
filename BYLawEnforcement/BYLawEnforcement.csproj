@@ -101,19 +101,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\BaseManage\Views\Orgnizations\Create.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Orgnizations\Delete.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Orgnizations\Details.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Orgnizations\Edit.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Orgnizations\Index.cshtml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\BaseManage\BaseManageAreaRegistration.cs" />
-    <Compile Include="Areas\BaseManage\Models\CaseCategory.cs" />
-    <Compile Include="Areas\BaseManage\Models\CateMeta.cs" />
+    <Compile Include="Areas\BaseManage\Controllers\OrgnizationsController.cs" />
     <Compile Include="Areas\BaseManage\Models\Class1.cs" />
-    <Compile Include="Areas\BaseManage\Models\Departments.cs" />
-    <Compile Include="Areas\BaseManage\Models\Officials.cs" />
     <Compile Include="Areas\BaseManage\Models\OrgnizationManage.cs" />
-    <Compile Include="Areas\BaseManage\Models\Orgnizations.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -123,6 +142,9 @@
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
     <Content Include="Areas\BaseManage\Views\web.config" />
+    <Content Include="Areas\BaseManage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -132,8 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\BaseManage\Controllers\" />
-    <Folder Include="Areas\BaseManage\Views\Shared\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
@@ -149,6 +169,10 @@
     <ProjectReference Include="..\LE.IDAL\LE.IDAL.csproj">
       <Project>{639236b6-9c11-4a7e-a32f-320dc65bcc5e}</Project>
       <Name>LE.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{7127f4b9-3c12-49ae-b587-2c59457a3feb}</Project>
+      <Name>Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,56 @@
+﻿@model Model.Orgnizations
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Orgnizations</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgDuty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgDuty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgDes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgDes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrgFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrgFlag)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

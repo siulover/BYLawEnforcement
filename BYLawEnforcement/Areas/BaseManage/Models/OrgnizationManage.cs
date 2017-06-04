@@ -7,7 +7,7 @@ using LE.Core;
 using LE.IDAL;
 using LinqKit;
 using System.Linq.Expressions;
-
+using Model;
 namespace BYLawEnforcement.Areas.BaseManage.Models
 {
     public class OrgnizationManage:BaseManager<Orgnizations>

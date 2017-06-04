@@ -17,12 +17,12 @@ namespace LE.IDAL
         /// <summary>
         /// 数据上下文
         /// </summary>
-        public DbContext Dbcontext { get; set; }
+        public DbContext DbContext { get; set; }
         public Repository()
         { }
         public Repository(DbContext dbContext)
         {
-            Dbcontext = dbContext;
+            DbContext = dbContext;
         }
         #region 查找单个实体
         /// <summary>
@@ -32,8 +32,13 @@ namespace LE.IDAL
         /// <returns></returns>
         public T Find(int ID)
         {
-            return Dbcontext.Set<T>().Find(ID);
+            return DbContext.Set<T>().Find(ID);
         }
+        public T Find(string ID)
+        {
+            return DbContext.Set<T>().Find(ID);
+        }
+
 
         /// <summary>
         /// 查找实体
@@ -42,7 +47,7 @@ namespace LE.IDAL
         /// <returns></returns>
         public T Find(Expression<Func<T, bool>> where)
         {
-            return Dbcontext.Set<T>().SingleOrDefault(where);
+            return DbContext.Set<T>().SingleOrDefault(where);
         }
         #endregion
 
@@ -53,7 +58,7 @@ namespace LE.IDAL
         /// <returns></returns>
         public IQueryable<T> FindList()
         {
-            return Dbcontext.Set<T>();
+            return DbContext.Set<T>();
         }
 
         /// <summary>
@@ -65,7 +70,7 @@ namespace LE.IDAL
         /// <returns></returns>
         public IQueryable<T> FindList<TKey>(Expression<Func<T, TKey>> order, bool asc)
         {
-            return asc ? Dbcontext.Set<T>().OrderBy(order) : Dbcontext.Set<T>().OrderByDescending(order);
+            return asc ? DbContext.Set<T>().OrderBy(order) : DbContext.Set<T>().OrderByDescending(order);
         }
 
         /// <summary>
@@ -78,7 +83,7 @@ namespace LE.IDAL
         /// <returns></returns>
         public IQueryable<T> FindList<TKey>(Expression<Func<T, TKey>> order, bool asc, int number)
         {
-            return asc ? Dbcontext.Set<T>().OrderBy(order).Take(number) : Dbcontext.Set<T>().OrderByDescending(order).Take(number);
+            return asc ? DbContext.Set<T>().OrderBy(order).Take(number) : DbContext.Set<T>().OrderByDescending(order).Take(number);
         }
 
         /// <summary>
@@ -88,7 +93,7 @@ namespace LE.IDAL
         /// <returns></returns>
         public IQueryable<T> FindList(Expression<Func<T, bool>> where)
         {
-            return Dbcontext.Set<T>().Where(where);
+            return DbContext.Set<T>().Where(where);
         }
 
         /// <summary>
@@ -99,7 +104,7 @@ namespace LE.IDAL
         /// <returns></returns>
         public IQueryable<T> FindList(Expression<Func<T, bool>> where, int number)
         {
-            return Dbcontext.Set<T>().Where(where).Take(number);
+            return DbContext.Set<T>().Where(where).Take(number);
         }
 
         /// <summary>
@@ -112,7 +117,7 @@ namespace LE.IDAL
         /// <returns></returns>
         public IQueryable<T> FindList<TKey>(Expression<Func<T, bool>> where, Expression<Func<T, TKey>> order, bool asc)
         {
-            return asc ? Dbcontext.Set<T>().Where(where).OrderBy(order) : Dbcontext.Set<T>().Where(where).OrderByDescending(order);
+            return asc ? DbContext.Set<T>().Where(where).OrderBy(order) : DbContext.Set<T>().Where(where).OrderByDescending(order);
         }
 
         /// <summary>
@@ -126,7 +131,7 @@ namespace LE.IDAL
         /// <returns></returns>
         public IQueryable<T> FindList<TKey>(Expression<Func<T, bool>> where, Expression<Func<T, TKey>> order, bool asc, int number)
         {
-            return asc ? Dbcontext.Set<T>().Where(where).OrderBy(order).Take(number) : Dbcontext.Set<T>().Where(where).OrderByDescending(order).Take(number);
+            return asc ? DbContext.Set<T>().Where(where).OrderBy(order).Take(number) : DbContext.Set<T>().Where(where).OrderByDescending(order).Take(number);
         }
         #endregion
 
@@ -145,7 +150,7 @@ namespace LE.IDAL
             //where一个加一个，和拼接字符串一样是不会查询的
             if (pageIndex < 1) pageIndex = 1;
             if (pageSize < 1) pageSize = 10;
-            IQueryable<T> _list = Dbcontext.Set<T>();
+            IQueryable<T> _list = DbContext.Set<T>();
             totalNumber = _list.Count();
             return _list.Skip((pageIndex - 1) * pageIndex).Take(pageSize);
         }
@@ -163,7 +168,7 @@ namespace LE.IDAL
         {
             if (pageIndex < 1) pageIndex = 1;
             if (pageSize < 1) pageSize = 10;
-            IQueryable<T> _list = Dbcontext.Set<T>();
+            IQueryable<T> _list = DbContext.Set<T>();
             _list = asc ? _list.OrderBy(order) : _list.OrderByDescending(order);
             totalNumber = _list.Count();
             return _list.Skip((pageIndex - 1) * pageIndex).Take(pageSize);
@@ -180,7 +185,7 @@ namespace LE.IDAL
         {
             if (pageIndex < 1) pageIndex = 1;
             if (pageSize < 1) pageSize = 10;
-            IQueryable<T> _list = Dbcontext.Set<T>().Where(where);
+            IQueryable<T> _list = DbContext.Set<T>().Where(where);
             totalNumber = _list.Count();
             return _list.Skip((pageIndex - 1) * pageIndex).Take(pageSize);
         }
@@ -198,7 +203,7 @@ namespace LE.IDAL
         {
             if (pageIndex < 1) pageIndex = 1;
             if (pageSize < 1) pageSize = 10;
-            IQueryable<T> _list = Dbcontext.Set<T>().Where(where);
+            IQueryable<T> _list = DbContext.Set<T>().Where(where);
             _list = asc ? _list.OrderBy(order) : _list.OrderByDescending(order);
             totalNumber = _list.Count();
             return _list.Skip((pageIndex - 1) * pageIndex).Take(pageSize);
@@ -224,8 +229,8 @@ namespace LE.IDAL
         /// <returns>在“isSave”为True时返回受影响的对象的数目，为False时直接返回0</returns>
         public int Add(T entity, bool isSave)
         {
-            Dbcontext.Set<T>().Add(entity);
-            return isSave ? Dbcontext.SaveChanges() : 0;
+            DbContext.Set<T>().Add(entity);
+            return isSave ? DbContext.SaveChanges() : 0;
         }
         #endregion
 
@@ -250,9 +255,9 @@ namespace LE.IDAL
         /// <returns>在“isSave”为True时返回受影响的对象的数目，为False时直接返回0</returns>
         public int Update(T entity, bool isSave)
         {
-            Dbcontext.Set<T>().Attach(entity);
-            Dbcontext.Entry<T>(entity).State = EntityState.Modified;
-            return isSave ? Dbcontext.SaveChanges() : 0;
+            DbContext.Set<T>().Attach(entity);
+            DbContext.Entry<T>(entity).State = EntityState.Modified;
+            return isSave ? DbContext.SaveChanges() : 0;
         }
         #endregion
 
@@ -275,9 +280,9 @@ namespace LE.IDAL
         /// <returns>在“isSave”为True时返回受影响的对象的数目，为False时直接返回0</returns>
         public int Delete(T entity, bool isSave)
         {
-            Dbcontext.Set<T>().Attach(entity);
-            Dbcontext.Entry<T>(entity).State = EntityState.Deleted;
-            return isSave ? Dbcontext.SaveChanges() : 0;
+            DbContext.Set<T>().Attach(entity);
+            DbContext.Entry<T>(entity).State = EntityState.Deleted;
+            return isSave ? DbContext.SaveChanges() : 0;
         }
 
         /// <summary>
@@ -287,8 +292,8 @@ namespace LE.IDAL
         /// <returns>受影响的对象的数目</returns>
         public int Delete(IEnumerable<T> entities)
         {
-            Dbcontext.Set<T>().RemoveRange(entities);
-            return Dbcontext.SaveChanges();
+            DbContext.Set<T>().RemoveRange(entities);
+            return DbContext.SaveChanges();
         }
         #endregion
 
@@ -299,7 +304,7 @@ namespace LE.IDAL
         /// <returns></returns>
         public int Count()
         {
-            return Dbcontext.Set<T>().Count();
+            return DbContext.Set<T>().Count();
         }
 
         /// <summary>
@@ -309,7 +314,7 @@ namespace LE.IDAL
         /// <returns></returns>
         public int Count(Expression<Func<T, bool>> predicate)
         {
-            return Dbcontext.Set<T>().Count(predicate);
+            return DbContext.Set<T>().Count(predicate);
         }
         #endregion
 
@@ -337,7 +342,7 @@ namespace LE.IDAL
         /// <returns>受影响的记录数</returns>
         public int Save()
         {
-            return Dbcontext.SaveChanges();
+            return DbContext.SaveChanges();
         }
         #endregion
     }

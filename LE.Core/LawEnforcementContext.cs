@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
+using Model;
 
 namespace LE.Core
 {
@@ -17,5 +18,7 @@ namespace LE.Core
         {
             Database.SetInitializer<LawEnforcementContext>(new CreateDatabaseIfNotExists<LawEnforcementContext>());
         }
+
+        public System.Data.Entity.DbSet<Model.Orgnizations> Orgnizations { get; set; }
     }
 }
