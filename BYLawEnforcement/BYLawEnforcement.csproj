@@ -122,6 +122,7 @@
     <Content Include="Areas\BaseManage\Views\TestPage\Index5.cshtml" />
     <Content Include="Areas\BaseManage\Views\TestPage\Index.cshtml" />
     <Content Include="Areas\BaseManage\Views\Shared\_Layout _Q.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Shared\_Layout _M.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

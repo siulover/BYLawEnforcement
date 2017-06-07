@@ -12,16 +12,29 @@
 <body>
     <nav class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
+            <!--collapse 属性的作用是在屏幕宽度不够时显示该按钮，如果屏幕宽度够的话，就进行横向排开显示-->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"> <span class="glyphicon glyphicon-home"></span>白云区人力资源和社会保障局</a>
+                <button type="button" class="navbar-toggle navbar-right" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="font-size:15px"><span class="glyphicon glyphicon-home"></span>白云区人力资源和社会保障局</a>
+
             </div>
             <div>
                 <ul class="nav navbar-nav">
-                   <li class="active"><a href="#">用户名</a></li>
+                    <li class="active"><a href="#">登陆名：iOS</a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">iOS</a></li>
                     <li><a href="#">SVN</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            注销 <b class="caret"></b>
+                            Java <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a href="#">jmeter</a></li>
@@ -39,11 +52,12 @@
     </nav>
 
 
+
     <div class="container body-content">
         @RenderBody()
 
-       
-       
+
+
     </div>
 
 
