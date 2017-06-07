@@ -1,4 +1,8 @@
-﻿@model Model.Orgnizations
+﻿@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/BaseManage/Views/Shared/_Layout_M.cshtml";
+}
+@model Model.Orgnizations
 
 @{
     ViewBag.Title = "Create";
@@ -11,16 +15,13 @@
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
+    <div class="ui-field-contain">
         <h4>Orgnizations</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.OrgName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.OrgName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.OrgName, "", new { @class = "text-danger" })
-            </div>
+        <div>
+            @Html.LabelFor(model => model.OrgName)  @Html.EditorFor(model => model.OrgName, new { htmlAttributes = new {@class= "ui-field-contain", @placeholder = "你的名字.." } })            
+            @Html.ValidationMessageFor(model => model.OrgName, "", new { @class = "text-danger" })
         </div>
 
         <div class="form-group">

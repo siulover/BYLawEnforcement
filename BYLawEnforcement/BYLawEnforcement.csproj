@@ -118,11 +118,11 @@
     <Content Include="Areas\BaseManage\Views\TestPage\Index1.cshtml" />
     <Content Include="Areas\BaseManage\Views\TestPage\Index2.cshtml" />
     <Content Include="Areas\BaseManage\Views\TestPage\Index3.cshtml" />
-    <Content Include="Areas\BaseManage\Views\Shared\_Layout _P.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Shared\_Layout_P.cshtml" />
     <Content Include="Areas\BaseManage\Views\TestPage\Index5.cshtml" />
     <Content Include="Areas\BaseManage\Views\TestPage\Index.cshtml" />
-    <Content Include="Areas\BaseManage\Views\Shared\_Layout _Q.cshtml" />
-    <Content Include="Areas\BaseManage\Views\Shared\_Layout _M.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Shared\_Layout_Q.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Shared\_Layout_M.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
