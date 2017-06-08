@@ -48,14 +48,17 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
         // 详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=317598。
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OrgNo,OrgName,OrgDuty,OrgDes,OrgFlag")] Orgnizations orgnizations)
+        public ActionResult Create([Bind(Include = "OrgName,OrgDuty,OrgDes")] Orgnizations orgnizations)
         {
-            if (ModelState.IsValid)
-            {
+            orgnizations.OrgFlag = 0;
+            orgnizations.OrgNo = 1;
+            //if (ModelState.IsValid)
+            //{
+                orgnizations.OrgFlag = 0;
                 db.Add(orgnizations);
                 db.Repositorys.Save();//.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                //return RedirectToAction("Index");
+            //}
 
             return View(orgnizations);
         }

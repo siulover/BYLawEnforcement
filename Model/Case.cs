@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Model
 {
     public class Case
     {
         //后台生成，
+        [Key]
         string CaseNo { get; set; }
         string CaseName { get; set; }
         /// <summary>

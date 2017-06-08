@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
 namespace Model
 {
     /// <summary>
@@ -11,6 +11,7 @@ namespace Model
     /// </summary>
     public class CaseTrace
     {
+       [Key]
         int TraceNo { get; set; }
         string CaseNo { get; set; }
         string TraceTitle { get; set; }

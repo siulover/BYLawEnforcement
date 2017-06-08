@@ -29,10 +29,12 @@ namespace Model
         /// <summary>
         /// 组织机构的职责
         /// </summary>
+        [Display(Name = "组织机构职责")]
         public string OrgDuty { get; set; }
         /// <summary>
         /// 组织机构描述
         /// </summary>
+        [Display(Name = "组织机构描述")]
         public string OrgDes { get; set; }
 
         ///// <summary>

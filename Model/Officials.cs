@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
-
+using System.ComponentModel.DataAnnotations;
 namespace Model
 {
     /// <summary>
@@ -15,6 +15,7 @@ namespace Model
         /// <summary>
         /// 工作人员编号
         /// </summary>
+        [Key]
         public string OffNo { get; set; }
 
         public string Offname { get; set;}
