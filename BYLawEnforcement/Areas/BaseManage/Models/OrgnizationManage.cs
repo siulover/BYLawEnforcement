@@ -29,7 +29,15 @@ namespace BYLawEnforcement.Areas.BaseManage.Models
             {
                 _resp = base.Add(entity);
             }
-            return base.Add(entity);
+            return _resp;
+        }
+        /// <s.urns></returns>
+        public override Orgnizations Find(int ID)
+        {
+            var _where = PredicateBuilder.New<Orgnizations>(true);
+            _where = _where.And(u => u.OrgNo == ID);
+            _where = _where.And(u => u.OrgFlag != 1);
+            return base.Repositorys.Find(_where);
         }
         /// <summary>
         /// 查询组织机构列表带分页方法
@@ -38,12 +46,16 @@ namespace BYLawEnforcement.Areas.BaseManage.Models
         /// <param name="orgName">组织机构名</param>
         /// <param name="order">？表示该值可以为空，排序【null（默认）-NO降序，0-NO升序，1-名称降序，2-名称升序】</param>
         /// <returns></returns>
-        public Paging<Orgnizations> FindPageList(Paging<Orgnizations> pageOrg, string orgName,int? order)
+        public Paging<Orgnizations> FindPageList(Paging<Orgnizations> pageOrg, int? order)
         {
            //PredicateBuilder是一个Lamda表达式的述语（谓词）生成器，New方法是新版本的开始生成一个Lamda表达式，其中New（true）替代原来的True（）
            //true表示生成and组合， false表示生成or组合。
             var _where = PredicateBuilder.New<Orgnizations>(true);
-            if(!string.IsNullOrEmpty(orgName)) _where= _where.And(u => u.OrgName == orgName);
+            //if (!string.IsNullOrEmpty(orgName))
+            //{
+                //_where = _where.And(u => u.OrgName == orgName);
+                _where = _where.And(u => u.OrgFlag != 1);
+            //}
 
             bool _asc = false;
 
@@ -51,7 +63,7 @@ namespace BYLawEnforcement.Areas.BaseManage.Models
             switch (order)
             {
                 case 0:
-                    pageOrg.Items = Repository.FindPageList(pageOrg.PageSize, pageOrg.PageIndex, out pageOrg.TotalNumber,u=>u.OrgNo,_asc).ToList();
+                    pageOrg.Items = Repository.FindPageList(pageOrg.PageSize, pageOrg.PageIndex,out pageOrg.TotalNumber, _where, u=>u.OrgNo,_asc).ToList();
                     break;
                 case 1:
                     _ord = u => u.OrgName;
@@ -68,11 +80,24 @@ namespace BYLawEnforcement.Areas.BaseManage.Models
 
             }
 
-            pageOrg.Items =Repository.FindPageList(pageOrg.PageSize, pageOrg.PageIndex, out pageOrg.TotalNumber,u=>u.OrgName, _asc).ToList();
+            pageOrg.Items =Repository.FindPageList(pageOrg.PageSize, pageOrg.PageIndex, out pageOrg.TotalNumber, _where,u => u.OrgName, _asc).ToList();
 
             return pageOrg;
         }
+        /// <summary>
+        /// 为确保关联数据不出错，更新标志位为1
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
+        public Response Remove(int ID)
+        {
+            Orgnizations org = Find(ID);
+            org.OrgFlag = 1;
+            Response _resp= base.Update(org);
+            
+            return _resp;
 
+        }
 
         /// <summary>
         /// 用户名是否存在

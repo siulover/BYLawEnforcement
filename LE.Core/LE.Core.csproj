@@ -52,6 +52,15 @@
     <Compile Include="BaseManager.cs" />
     <Compile Include="ContextFactory.cs" />
     <Compile Include="LawEnforcementContext.cs" />
+    <Compile Include="Migrations\201706080658373_InitialCreate.cs" />
+    <Compile Include="Migrations\201706080658373_InitialCreate.Designer.cs">
+      <DependentUpon>201706080658373_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706080702341_Initial.cs" />
+    <Compile Include="Migrations\201706080702341_Initial.Designer.cs">
+      <DependentUpon>201706080702341_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +80,14 @@
       <Project>{7127f4b9-3c12-49ae-b587-2c59457a3feb}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706080658373_InitialCreate.resx">
+      <DependentUpon>201706080658373_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706080702341_Initial.resx">
+      <DependentUpon>201706080702341_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

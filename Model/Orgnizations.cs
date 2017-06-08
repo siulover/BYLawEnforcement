@@ -15,7 +15,6 @@ namespace Model
         /// 组织机构编号，一级部门不用设置编号，其以1000作为起点自动生成
         /// </summary>
         [Key]//单列整形的Key会被自动设置为标识列
-        [Range(minimum: 1000, maximum: 9000)]
         public int OrgNo { get; set; }
         /// <summary>
         /// 组织机构名字
