@@ -103,6 +103,27 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\HtmlPage1.html" />
+    <Content Include="Content\jqmobileEXp\assets\css\jquery.mobile-1.0.1.min.css" />
+    <Content Include="Content\jqmobileEXp\assets\image\ajax-loader.png" />
+    <Content Include="Content\jqmobileEXp\assets\image\album-bb.jpg" />
+    <Content Include="Content\jqmobileEXp\assets\image\album-hc.jpg" />
+    <Content Include="Content\jqmobileEXp\assets\image\album-p.jpg" />
+    <Content Include="Content\jqmobileEXp\assets\image\de.png" />
+    <Content Include="Content\jqmobileEXp\assets\image\gb.png" />
+    <Content Include="Content\jqmobileEXp\assets\image\gf.png" />
+    <Content Include="Content\jqmobileEXp\assets\image\icons-18-black.png" />
+    <Content Include="Content\jqmobileEXp\assets\image\icons-18-white.png" />
+    <Content Include="Content\jqmobileEXp\assets\image\icons-36-black.png" />
+    <Content Include="Content\jqmobileEXp\assets\image\icons-36-white.png" />
+    <Content Include="Content\jqmobileEXp\assets\js\cordova-1.5.0.js" />
+    <Content Include="Content\jqmobileEXp\assets\js\jquery.js" />
+    <Content Include="Content\jqmobileEXp\assets\js\jquery.mobile-1.0.1.min.js" />
+    <Content Include="Content\jqmobileEXp\assets\page\index.html" />
+    <Content Include="Content\jqmobileEXp\assets\page\main.html" />
+    <Content Include="Content\jqmobileEXp\assets\page\main2.html" />
+    <Content Include="Content\jqmobileEXp\assets\page\main3.html" />
+    <Content Include="Content\jqmobileEXp\assets\page\main4.html" />
     <Content Include="Content\PageCss\theme.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -123,6 +144,22 @@
     <Content Include="Areas\BaseManage\Views\TestPage\Index.cshtml" />
     <Content Include="Areas\BaseManage\Views\Shared\_Layout_Q.cshtml" />
     <Content Include="Areas\BaseManage\Views\Shared\_Layout_M.cshtml" />
+    <Content Include="Content\jqmobile从登陆到菜单完整例子.zip" />
+    <Content Include="Content\jqmobileEXp\assets\css\.svn\entries" />
+    <Content Include="Content\jqmobileEXp\assets\css\.svn\format" />
+    <Content Include="Content\jqmobileEXp\assets\css\.svn\text-base\jquery.mobile-1.0.1.min.css.svn-base" />
+    <Content Include="Content\jqmobileEXp\assets\js\.svn\entries" />
+    <Content Include="Content\jqmobileEXp\assets\js\.svn\format" />
+    <Content Include="Content\jqmobileEXp\assets\js\.svn\text-base\cordova-1.5.0.js.svn-base" />
+    <Content Include="Content\jqmobileEXp\assets\js\.svn\text-base\jquery.js.svn-base" />
+    <Content Include="Content\jqmobileEXp\assets\js\.svn\text-base\jquery.mobile-1.0.1.min.js.svn-base" />
+    <Content Include="Content\jqmobileEXp\assets\page\.svn\entries" />
+    <Content Include="Content\jqmobileEXp\assets\page\.svn\format" />
+    <Content Include="Content\jqmobileEXp\assets\page\.svn\text-base\index.html.svn-base" />
+    <Content Include="Content\jqmobileEXp\assets\page\.svn\text-base\main.html.svn-base" />
+    <Content Include="Content\jqmobileEXp\assets\page\.svn\text-base\main2.html.svn-base" />
+    <Content Include="Content\jqmobileEXp\assets\page\.svn\text-base\main3.html.svn-base" />
+    <Content Include="Content\jqmobileEXp\assets\page\.svn\text-base\main4.html.svn-base" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -163,6 +200,21 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\jqmobileEXp\assets\css\.svn\prop-base\" />
+    <Folder Include="Content\jqmobileEXp\assets\css\.svn\props\" />
+    <Folder Include="Content\jqmobileEXp\assets\css\.svn\tmp\prop-base\" />
+    <Folder Include="Content\jqmobileEXp\assets\css\.svn\tmp\props\" />
+    <Folder Include="Content\jqmobileEXp\assets\css\.svn\tmp\text-base\" />
+    <Folder Include="Content\jqmobileEXp\assets\js\.svn\prop-base\" />
+    <Folder Include="Content\jqmobileEXp\assets\js\.svn\props\" />
+    <Folder Include="Content\jqmobileEXp\assets\js\.svn\tmp\prop-base\" />
+    <Folder Include="Content\jqmobileEXp\assets\js\.svn\tmp\props\" />
+    <Folder Include="Content\jqmobileEXp\assets\js\.svn\tmp\text-base\" />
+    <Folder Include="Content\jqmobileEXp\assets\page\.svn\prop-base\" />
+    <Folder Include="Content\jqmobileEXp\assets\page\.svn\props\" />
+    <Folder Include="Content\jqmobileEXp\assets\page\.svn\tmp\prop-base\" />
+    <Folder Include="Content\jqmobileEXp\assets\page\.svn\tmp\props\" />
+    <Folder Include="Content\jqmobileEXp\assets\page\.svn\tmp\text-base\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>

@@ -3,19 +3,83 @@
 @{
     ViewBag.Title = "Edit";
 }
+<style>
+#popup{
+    position: absolute;display:none; z-index:3000; background-color:#FFF; left: 601px; top: 217px; height: 150px; width: 217px;line-height:94px;text-align:center;
+    border: 1px solid #03F;
+}
+#embedding{
+    position: absolute; background-color: #36F; top: 94px;height:56px; width:217px;line-height:56px;text-align:center;
+}
+.a-show{
+  text-decoration:none;
+  font-family:"微软雅黑";
+  font-size:18px;
+  color:#FFF;
+}
+</style>
+
+<script>
+
+    function testclick()
+    {
+            if ($(this).text() == '确定') {
+                alert($(this).text());
+            } else {
+                $('#loadingDiv').css('display', 'none');
+                $('#popup').slideUp();
+            }
+        }
+  
+
+    $("form").on("submit", function () {
+        alert("test");
+        var url = this.action;   //可以直接取到表单的action
+        var formData = $(this).serialize();
+        $.post(url, formData,
+            function (data) {
+                //返回成功，可以做一个其他事情
+                // console.log(data);
+                if (data.Code == 0) {
+                    alert("test");
+                    $("#text").text(data.Message);
+                    $('#loadingDiv').css('display', 'block');
+                    $('#popup').slideDown();
+                    //$("#Tedit").css({ "display": "none" });
+                    //$("#myPopup").addClass("mydiv2");
+                    //$("#myPopup").css("display","block");
+                }
+                else { location.href = "../Index";}
+            }, 'json');
+
+        //阻止表单默认提交行为
+        return false
+    })
+</script>
+
 
 <h2>Edit</h2>
 
+<div id="loadingDiv" style="position:fixed;display:none;z-index:2000;top:0px;left:0px;width:100%;height:100%;background-color:gray;opacity:0.5;"></div>
+<div id="popup">
+    <span id="text"></span>
+    <div id="embedding">
+        <a onclick="testclick(this)" class="ui-btn ui-btn-b">确定</a>
+        <a  onclick="testclick(this)" data-theme="b">取消</a>
+    </div>
+</div>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
+
+
+    <div id="Tedit" class="form-horizontal">
         <h4>Orgnizations</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.OrgNo)
+       
 
         <div class="form-group">
             @Html.LabelFor(model => model.OrgName, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -41,13 +105,7 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.OrgFlag, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.OrgFlag, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.OrgFlag, "", new { @class = "text-danger" })
-            </div>
-        </div>
+       
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

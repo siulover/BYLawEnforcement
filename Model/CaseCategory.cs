@@ -12,12 +12,12 @@ namespace Model
     public class CaseCategory
     {
         [Key]
-        int CategoryNo { get; set; }
-        string CategoryName { get; set; }
+        public int CategoryNo { get; set; }
+        public string CategoryName { get; set; }
 
         /// <summary>
         /// 案件分类标志，0 正常，1 删除
         /// </summary>
-        int CategoryFlag { get; set; }
+        public int CategoryFlag { get; set; }
     }
 }

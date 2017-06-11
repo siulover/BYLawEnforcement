@@ -11,73 +11,73 @@ namespace Model
     {
         //后台生成，
         [Key]
-        string CaseNo { get; set; }
-        string CaseName { get; set; }
+        public string CaseNo { get; set; }
+        public string CaseName { get; set; }
         /// <summary>
         /// 违法投诉、欠费催缴、专项审计、信访、其他等案件的分类
         /// </summary>
-        string CaseCategory { get; set; }
+        public string CaseCategory { get; set; }
 
         /// <summary>
         /// 案件标记，用于标记案件的类别，标记案件是社保投诉案件、监察农民工工资投诉案件等
         /// 仲裁案件或其他案件等。
         /// </summary>
-        string CaseMeta { get; set; }
+        public string CaseMeta { get; set; }
 
         /// <summary>
         /// 投诉人ID
         /// </summary>
-        string CaseComplainantID { get; set; }
-        string CaseComplainantName { get; set; }
-        string CaseComplainantMobil { get; set; }
-        string CaseComplainantAdr { get; set; }
+        public string CaseComplainantID { get; set; }
+        public string CaseComplainantName { get; set; }
+        public string CaseComplainantMobil { get; set; }
+        public string CaseComplainantAdr { get; set; }
         /// <summary>
         /// 诉求
         /// </summary>
-        string CaseRequest { get; set; }
+        public string CaseRequest { get; set; }
         /// <summary>
         /// 投诉日期
         /// </summary>
-        string CaseComplaintDate { get; set; }
+        public string CaseComplaintDate { get; set; }
 
         /// <summary>
         /// 被投诉组织或单位
         /// </summary>
-        string CaseBeComplaintOrg { get; set; }
+        public string CaseBeComplaintOrg { get; set; }
         /// <summary>
         /// 被投诉组织负责人
         /// </summary>
-        string CaseBeComplaintOrgMg { get; set; }
+        public string CaseBeComplaintOrgMg { get; set; }
         /// <summary>
         /// 联系方式
         /// </summary>
-        string CaseBeComplaintOrgMgTel { get; set; }
+        public string CaseBeComplaintOrgMgTel { get; set; }
         /// <summary>
         /// 联系人
         /// </summary>
-        string CaseBeComplaintOrgContact { get; set; }
+        public string CaseBeComplaintOrgContact { get; set; }
         /// <summary>
         /// 联系方式
         /// </summary>
-        string CaseBeComplaintOrgContactTel { get; set; }
+        public string CaseBeComplaintOrgContactTel { get; set; }
         /// <summary>
         /// 被投诉单位地址
         /// </summary>
-        string CaseBeComplaintAdr { get; set; }
+        public string CaseBeComplaintAdr { get; set; }
 
 
         /// <summary>
         /// 录入人
         /// </summary>
-        string OfficialNo { get; set; }
+        public string OfficialNo { get; set; }
         /// <summary>
         /// 案件状态标志。如是否结案、是否被删除等。0 正常，1 删除 2结案
         /// </summary>
-        int CaseFlag { get; set; }
+        public int CaseFlag { get; set; }
         /// <summary>
         /// 案件终止原因，如：已经结案、案件无法继续进行等原因。
         /// </summary>
-        string CaseEndReason { get; set; }
+        public string CaseEndReason { get; set; }
 
     }
 }

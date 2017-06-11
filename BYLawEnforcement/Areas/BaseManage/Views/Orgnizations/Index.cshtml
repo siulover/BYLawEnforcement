@@ -4,7 +4,20 @@
     ViewBag.Title = "Index";
 }
 
+<script>
+   
+    //$(document).on("pageinit", function () {
+            
+    //    //$("#testtt").trigger("click")//模拟出发按键
+    //    //alert("pagebeforecreate 事件触发!")
+    //    //$("#myPopup").popup('open')//调用带有弹出层的弹出方法。close为关闭
+    //});
+    
+
+</script>
+
 <h2>Index</h2>
+
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -20,9 +33,7 @@
         <th>
             @Html.DisplayNameFor(model => model.OrgDes)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OrgFlag)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -36,9 +47,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.OrgDes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrgFlag)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.OrgNo }) |

@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+    
+    </script>
 </head>
 <body>
 
@@ -28,7 +31,7 @@
             <a href="#pageone" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">关闭面板</a>
         </div>
 
-        <div data-role="header" style="background-color:#000000;text-shadow:none;">
+        <div data-role="header"  data-theme="b" ><!--style="background-color:#000000;text-shadow:none;"-->
             <a href="#" class="ui-btn ui-corner-all ui-icon-home ui-btn-icon-notext" >图标</a><h1 style="margin-left:34px;color:white;" >白云区人力资源和社会保障局</h1>
             <a href="#overlayPanel" class="ui-btn ui-corner-all ui-icon-bars ui-btn-icon-notext" ></a>
         </div>
@@ -37,14 +40,14 @@
 
 
 
-        <div  data-role="main" class="ui-content">
+        <div  data-role="main" class="ui-content" data-theme="b">
             @RenderBody()
 
 
 
         </div>
 
-        <div data-role="footer" style="margin-bottom:-100px;">
+        <div data-role="footer"  data-theme="b">
             <h1>页面底部</h1>
         </div>
     </div>

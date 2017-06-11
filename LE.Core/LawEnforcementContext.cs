@@ -21,11 +21,11 @@ namespace LE.Core
 
         public System.Data.Entity.DbSet<Model.Orgnizations> Orgnizations { get; set; }
         public System.Data.Entity.DbSet<Model.Departments> Departments { get; set; }
-        //public System.Data.Entity.DbSet<Model.Officials> Officials { get; set; }
-        //public System.Data.Entity.DbSet<Model.CaseCategory> CaseCategory { get; set; }
-        //public System.Data.Entity.DbSet<Model.CateMeta> CateMeta { get; set; }
-        //public System.Data.Entity.DbSet<Model.Case> Case { get; set; }
-        //public System.Data.Entity.DbSet<Model.CaseTrace> CaseTrace { get; set; }
+        public System.Data.Entity.DbSet<Model.Officials> Officials { get; set; }
+        public System.Data.Entity.DbSet<Model.CaseCategory> CaseCategory { get; set; }
+        public System.Data.Entity.DbSet<Model.CateMeta> CateMeta { get; set; }
+        public System.Data.Entity.DbSet<Model.Case> Case { get; set; }
+        public System.Data.Entity.DbSet<Model.CaseTrace> CaseTrace { get; set; }
 
     }
 }

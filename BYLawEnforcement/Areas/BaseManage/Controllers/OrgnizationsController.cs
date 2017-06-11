@@ -56,47 +56,56 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
         {
             //orgnizations.OrgFlag = 0;
             //orgnizations.OrgNo = 1;
+            Response _resp=null;
             if (ModelState.IsValid)
             {
                 //orgnizations.OrgFlag = 0;
-                db.Add(orgnizations);
-                db.Repositorys.Save();//.SaveChanges();
-                return RedirectToAction("Index");
+                 _resp= db.Add(orgnizations);
+                if (_resp.Code == 1)
+                    return RedirectToAction("Index");
+                else
+                    _resp.Data = orgnizations;
             }
 
+            return View(_resp);
+        }
+
+        // GET: BaseManage/Orgnizations/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Orgnizations orgnizations = db.Find((int)id);
+            if (orgnizations == null)
+            {
+                return HttpNotFound();
+            }
             return View(orgnizations);
         }
 
-        //        // GET: BaseManage/Orgnizations/Edit/5
-        //        public ActionResult Edit(int? id)
-        //        {
-        //            if (id == null)
-        //            {
-        //                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //            }
-        //            Orgnizations orgnizations = db.Orgnizations.Find(id);
-        //            if (orgnizations == null)
-        //            {
-        //                return HttpNotFound();
-        //            }
-        //            return View(orgnizations);
-        //        }
-
-        //        // POST: BaseManage/Orgnizations/Edit/5
-        //        // 为了防止“过多发布”攻击，请启用要绑定到的特定属性，有关 
-        //        // 详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=317598。
-        //        [HttpPost]
-        //        [ValidateAntiForgeryToken]
-        //        public ActionResult Edit([Bind(Include = "OrgNo,OrgName,OrgDuty,OrgDes,OrgFlag")] Orgnizations orgnizations)
-        //        {
-        //            if (ModelState.IsValid)
-        //            {
-        //                db.Entry(orgnizations).State = EntityState.Modified;
-        //                db.SaveChanges();
-        //                return RedirectToAction("Index");
-        //            }
-        //            return View(orgnizations);
-        //        }
+        // POST: BaseManage/Orgnizations/Edit/5
+        // 为了防止“过多发布”攻击，请启用要绑定到的特定属性，有关 
+        // 详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=317598。
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public JsonResult Edit([Bind(Include = "OrgNo,OrgName,OrgDuty,OrgDes")] Orgnizations orgnizations)
+        {
+            Response _resp = new Response();
+            _resp.Code = 0;
+            _resp.Message = "更新组织机构错误";
+            if (ModelState.IsValid)
+            {
+                _resp= db.Update(orgnizations);//..Entry(orgnizations).State = EntityState.Modified;
+                //db.SaveChanges();
+                //if(_resp.Code==1)
+                //    return RedirectToAction("Index");
+            }
+            //Json()
+            _resp.Code = 0;
+            return Json(_resp);
+        }
 
         // GET: BaseManage/Orgnizations/Delete/5
         public ActionResult Delete(int? id)
@@ -124,13 +133,13 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
             return RedirectToAction("Index");
         }
 
-        //        protected override void Dispose(bool disposing)
-        //        {
-        //            if (disposing)
-        //            {
-        //                db.Dispose();
-        //            }
-        //            base.Dispose(disposing);
-        //        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }
