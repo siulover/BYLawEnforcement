@@ -4,12 +4,20 @@
     ViewBag.Title = "Edit";
 }
 <style>
+/*
 #popup{
     position: absolute;display:none; z-index:3000; background-color:#FFF; left: 601px; top: 217px; height: 150px; width: 217px;line-height:94px;text-align:center;
     border: 1px solid #03F;
 }
 #embedding{
-    position: absolute; background-color: #36F; top: 94px;height:56px; width:217px;line-height:56px;text-align:center;
+    position: absolute; background-color: #36F; top: 94px;height:56px; width:217px;line-height:56px;text-align:center;text-shadow:none;
+}
+*/
+#popup{
+    position:absolute;display:none; z-index:3000; top:25%; left:10%; background-color:gray; height: 50%; width: 80%;line-height:94px;text-align:center;
+}
+#embedding{
+    position: absolute; top:0px;left:97%;text-shadow:none;
 }
 .a-show{
   text-decoration:none;
@@ -21,7 +29,7 @@
 
 <script>
 
-    function testclick()
+    function hidePop()
     {
             if ($(this).text() == '确定') {
                 alert($(this).text());
@@ -31,9 +39,9 @@
             }
         }
   
-
+    //接管表单的提交新闻
     $("form").on("submit", function () {
-        alert("test");
+      
         var url = this.action;   //可以直接取到表单的action
         var formData = $(this).serialize();
         $.post(url, formData,
@@ -41,13 +49,15 @@
                 //返回成功，可以做一个其他事情
                 // console.log(data);
                 if (data.Code == 0) {
-                    alert("test");
+                    //alert("test");
+                    //设置span内的返回文本
                     $("#text").text(data.Message);
+                    //显示
                     $('#loadingDiv').css('display', 'block');
+                    //Jquery事件，确保都能成功，部分JQuery Mobile事件在手机上会不成功。
                     $('#popup').slideDown();
-                    //$("#Tedit").css({ "display": "none" });
-                    //$("#myPopup").addClass("mydiv2");
-                    //$("#myPopup").css("display","block");
+
+                    
                 }
                 else { location.href = "../Index";}
             }, 'json');
@@ -61,11 +71,12 @@
 <h2>Edit</h2>
 
 <div id="loadingDiv" style="position:fixed;display:none;z-index:2000;top:0px;left:0px;width:100%;height:100%;background-color:gray;opacity:0.5;"></div>
-<div id="popup">
-    <span id="text"></span>
-    <div id="embedding">
-        <a onclick="testclick(this)" class="ui-btn ui-btn-b">确定</a>
-        <a  onclick="testclick(this)" data-theme="b">取消</a>
+<div id="popup" data-theme="a">
+    <span id="text" style="color:white;"></span>
+    <a style="position:absolute;top:-17px;left:-17px;" href="#" class="ui-btn ui-btn-a ui-corner-all ui-icon-delete ui-btn-icon-notext" onclick="hidePop()">图标</a>
+    <div id="embedding" data-theme="b">
+        @*<a onclick="testclick(this)">确定</a>
+        <a onclick="testclick(this)">取消</a>*@
     </div>
 </div>
 

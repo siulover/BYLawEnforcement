@@ -103,7 +103,6 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
                 //    return RedirectToAction("Index");
             }
             //Json()
-            _resp.Code = 0;
             return Json(_resp);
         }
 
