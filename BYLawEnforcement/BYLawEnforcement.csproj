@@ -160,6 +160,11 @@
     <Content Include="Content\jqmobileEXp\assets\page\.svn\text-base\main2.html.svn-base" />
     <Content Include="Content\jqmobileEXp\assets\page\.svn\text-base\main3.html.svn-base" />
     <Content Include="Content\jqmobileEXp\assets\page\.svn\text-base\main4.html.svn-base" />
+    <Content Include="Areas\BaseManage\Views\Departments\Create.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Departments\Delete.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Departments\Details.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Departments\Edit.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Departments\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -176,8 +181,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\BaseManage\BaseManageAreaRegistration.cs" />
+    <Compile Include="Areas\BaseManage\Controllers\DepartmentsController.cs" />
     <Compile Include="Areas\BaseManage\Controllers\OrgnizationsController.cs" />
     <Compile Include="Areas\BaseManage\Controllers\TestPageController.cs" />
+    <Compile Include="Areas\BaseManage\Models\DepartmentManage.cs" />
     <Compile Include="Areas\BaseManage\Models\OrgnizationManage.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

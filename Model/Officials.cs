@@ -19,7 +19,7 @@ namespace Model
         public string OffNo { get; set; }
 
         public string Offname { get; set;}
-        public string DepNo { get; set; }
+        public int DepNo { get; set; }
 
         public string MobileNo { get; set; }
 
@@ -29,6 +29,7 @@ namespace Model
         /// </summary>
         public string LawForcementNo { get; set; }
         public int OfficialFlag { get; set; }
+
 
     }
 }

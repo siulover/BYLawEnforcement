@@ -16,11 +16,11 @@
 
 </script>
 
-<h2>Index</h2>
+<h2>组织机构信息</h2>
 
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("新建", "Create")
 </p>
 <table class="table">
     <tr>
@@ -37,23 +37,25 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrgName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrgDuty)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrgDes)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrgNo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OrgNo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OrgNo })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrgName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrgDuty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrgDes)
+            </td>
+            <td>
+                @Html.ActionLink("修改", "Edit", new { id = item.OrgNo }) |
+                @Html.ActionLink("详细", "Details", new { id = item.OrgNo }) |
+                @Html.ActionLink("删除", "Delete", new { id = item.OrgNo })
+            </td>
+        </tr>
+    
 }
 
 </table>

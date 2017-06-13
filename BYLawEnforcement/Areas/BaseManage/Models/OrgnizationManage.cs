@@ -100,7 +100,7 @@ namespace BYLawEnforcement.Areas.BaseManage.Models
         }
 
         /// <summary>
-        /// 用户名是否存在
+        /// 组织机构名是否存在
         /// </summary>
         /// <param name="accounts">用户名[不区分大小写]</param>
         /// <returns></returns>

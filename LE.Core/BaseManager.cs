@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using LE.IDAL;
 using LE.Common;
+using System.Linq.Expressions;
 
 namespace LE.Core
 {
@@ -161,6 +162,5 @@ namespace LE.Core
             return Repository.Count();
         }
 
-        
     }
 }

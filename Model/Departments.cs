@@ -12,11 +12,18 @@ namespace Model
     public class Departments
     {
         [Key]
-        public string DepartNo { get; set; }
-
+        [Display(Name ="部门编号")]
+        public int DepartNo { get; set; }
+        [Required]
+        [StringLength(50,MinimumLength =2,ErrorMessage = "{0}长度为{2}-{1}个字符")]
+        [Display(Name ="部门名称")]
         public string DepartName { get; set; }
-
+        [Required]
+        [Display(Name ="机构编号")]
         public string OrgNo { get; set; }
+        /// <summary>
+        /// 部门标志位0正常，1删除。
+        /// </summary>
         public int DepartmentFlag { get; set; }
     }
 }
