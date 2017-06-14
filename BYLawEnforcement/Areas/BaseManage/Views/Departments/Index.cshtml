@@ -1,8 +1,10 @@
-﻿@model IEnumerable<Model.Departments>
+﻿@using BYLawEnforcement.Areas.BaseManage.Models;
+@model IEnumerable<Model.Departments>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Areas/BaseManage/Views/Shared/_Layout_M.cshtml";
+        ViewBag.Title = "Index";
+        Layout = "~/Areas/BaseManage/Views/Shared/_Layout_M.cshtml";
+
 }
 
 <h2>Index</h2>
@@ -16,7 +18,7 @@
             @Html.DisplayNameFor(model => model.DepartName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrgNo)
+            @Html.DisplayNameFor(model =>model.OrgNo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DepartmentFlag)
@@ -24,16 +26,20 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.DepartName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.OrgNo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DepartmentFlag)
+            @{ 
+                OrgnizationManage _orgMg = new OrgnizationManage();
+                item.Org=_orgMg.Find(item.OrgNo);
+                
+                <span>@item.Org.OrgName</span>
+            }
+            @*@Html.DisplayFor(modelItem => item.Org.OrgName)*@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.DepartNo }) |

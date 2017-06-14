@@ -12,6 +12,7 @@ namespace BYLawEnforcement.Areas.BaseManage.Models
 {
     public class OrgnizationManage:BaseManager<Orgnizations>
     {
+       
         /// <summary>
         /// 添加[返回值Response是自定义的返回类型。其中Response.Code 0 表示添加失败，1表示添加成功，2表示部门已经存在]
         /// </summary>

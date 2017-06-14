@@ -63,6 +63,7 @@ namespace BYLawEnforcement.Areas.BaseManage.Models
             {
                 case 0:
                     pageDpt.Items = Repository.FindPageList(pageDpt.PageSize, pageDpt.PageIndex, out pageDpt.TotalNumber, _where, u => u.DepartNo, _asc).ToList();
+
                     break;
                 case 1:
                     _ord = u => u.DepartName;
@@ -74,12 +75,12 @@ namespace BYLawEnforcement.Areas.BaseManage.Models
                     break;
                 default:
                     _ord = u => u.DepartName;
-                    _asc = true;
+                    _asc = false;
                     break;
 
             }
 
-            pageDpt.Items = Repository.FindPageList(pageDpt.PageSize, pageDpt.PageIndex, out pageDpt.TotalNumber, _where, u => u.DepartName, _asc).ToList();
+            pageDpt.Items = Repository.FindPageList(pageDpt.PageSize, pageDpt.PageIndex, out pageDpt.TotalNumber, _where, u => u.DepartNo, _asc).ToList();
 
             return pageDpt;
         }

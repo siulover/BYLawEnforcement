@@ -8,17 +8,22 @@ using System.Web;
 using System.Web.Mvc;
 using LE.Core;
 using Model;
-
+using BYLawEnforcement.Areas.BaseManage.Models;
+using LE.Common;
 namespace BYLawEnforcement.Areas.BaseManage.Controllers
 {
     public class DepartmentsController : Controller
     {
-        private LawEnforcementContext db = new LawEnforcementContext();
+        private DepartmentManage  db = new DepartmentManage();
 
         // GET: BaseManage/Departments
         public ActionResult Index()
         {
-            return View(db.Departments.ToList());
+            Paging<Departments> pages = new Paging<Departments>();
+            pages.PageSize = 5;
+            db.FindPageList(pages, null);
+            
+            return View(pages.Items);
         }
 
         // GET: BaseManage/Departments/Details/5
@@ -28,7 +33,7 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Departments departments = db.Departments.Find(id);
+            Departments departments = db.Find((int)id);
             if (departments == null)
             {
                 return HttpNotFound();
@@ -49,10 +54,11 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "DepartNo,DepartName,OrgNo,DepartmentFlag")] Departments departments)
         {
+            
             if (ModelState.IsValid)
             {
-                db.Departments.Add(departments);
-                db.SaveChanges();
+                db.Add(departments);
+               
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +72,7 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Departments departments = db.Departments.Find(id);
+            Departments departments = db.Find((int)id);
             if (departments == null)
             {
                 return HttpNotFound();
@@ -83,8 +89,7 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(departments).State = EntityState.Modified;
-                db.SaveChanges();
+                db.Update(departments);
                 return RedirectToAction("Index");
             }
             return View(departments);
@@ -97,7 +102,7 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Departments departments = db.Departments.Find(id);
+            Departments departments = db.Find((int)id);
             if (departments == null)
             {
                 return HttpNotFound();
@@ -110,9 +115,9 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Departments departments = db.Departments.Find(id);
-            db.Departments.Remove(departments);
-            db.SaveChanges();
+            
+            db.Remove(id);
+            //db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -120,7 +125,7 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                db.Repositorys.DbContext.Dispose();
             }
             base.Dispose(disposing);
         }

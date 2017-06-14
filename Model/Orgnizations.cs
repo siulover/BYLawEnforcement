@@ -46,7 +46,5 @@ namespace Model
         /// 0 正常，1 删除
         /// </summary>
         public int OrgFlag { get; set; }
-
-
     }
 }

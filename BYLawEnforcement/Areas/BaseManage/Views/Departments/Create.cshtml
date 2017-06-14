@@ -1,8 +1,15 @@
-﻿@model Model.Departments
-
+﻿@using BYLawEnforcement.Areas.BaseManage.Models;
+@using LE.Common;
+@model Model.Departments
 @{
     ViewBag.Title = "Create";
     Layout = "~/Areas/BaseManage/Views/Shared/_Layout_M.cshtml";
+    //var _list = new List<SelectListItem>();
+    OrgnizationManage _orgMg = new OrgnizationManage();
+    Paging<Model.Orgnizations> _page = new Paging<Model.Orgnizations>();
+    _orgMg.FindPageList(_page,null);
+    var _slist = new SelectList(_page.Items, "OrgNo", "OrgName");
+
 }
 
 <h2>Create</h2>
@@ -27,16 +34,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.OrgNo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.OrgNo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.OrgNo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DepartmentFlag, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DepartmentFlag, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DepartmentFlag, "", new { @class = "text-danger" })
+                @*@Html.EditorFor(model => model.OrgNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.OrgNo, "", new { @class = "text-danger" })*@
+                @Html.DropDownListFor(model => model.OrgNo,_slist,"请选择")
             </div>
         </div>
 

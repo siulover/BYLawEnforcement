@@ -84,6 +84,18 @@
     <Compile Include="Migrations\201706131410514_Initail2.Designer.cs">
       <DependentUpon>201706131410514_Initail2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706140619503_Initail3.cs" />
+    <Compile Include="Migrations\201706140619503_Initail3.Designer.cs">
+      <DependentUpon>201706140619503_Initail3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706140640288_Initail4.cs" />
+    <Compile Include="Migrations\201706140640288_Initail4.Designer.cs">
+      <DependentUpon>201706140640288_Initail4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706140841570_Initail5.cs" />
+    <Compile Include="Migrations\201706140841570_Initail5.Designer.cs">
+      <DependentUpon>201706140841570_Initail5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -129,6 +141,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706131410514_Initail2.resx">
       <DependentUpon>201706131410514_Initail2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706140619503_Initail3.resx">
+      <DependentUpon>201706140619503_Initail3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706140640288_Initail4.resx">
+      <DependentUpon>201706140640288_Initail4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706140841570_Initail5.resx">
+      <DependentUpon>201706140841570_Initail5.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
