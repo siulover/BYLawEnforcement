@@ -9,7 +9,6 @@
     Paging<Model.Orgnizations> _page = new Paging<Model.Orgnizations>();
     _orgMg.FindPageList(_page,null);
     var _slist = new SelectList(_page.Items, "OrgNo", "OrgName");
-
 }
 
 <h2>Create</h2>

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Model
 {
     /// <summary>
@@ -18,6 +20,7 @@ namespace Model
         [StringLength(50,MinimumLength =2,ErrorMessage = "{0}长度为{2}-{1}个字符")]
         [Display(Name ="部门名称")]
         public string DepartName { get; set; }
+        [ForeignKey("Org")]
         [Required]
         [Display(Name ="机构编号")]
         public int OrgNo { get; set; }
@@ -25,6 +28,6 @@ namespace Model
         /// 部门标志位0正常，1删除。
         /// </summary>
         public int DepartmentFlag { get; set; }
-        public Orgnizations Org { get; set; }
+        public virtual Orgnizations Org { get; set; }
     }
 }

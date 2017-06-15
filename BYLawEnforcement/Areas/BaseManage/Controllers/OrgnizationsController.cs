@@ -132,13 +132,13 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Repositorys.DbContext.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Repositorys.DbContext.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }

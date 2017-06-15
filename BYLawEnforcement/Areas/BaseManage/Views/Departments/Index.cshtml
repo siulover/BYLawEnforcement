@@ -2,9 +2,9 @@
 @model IEnumerable<Model.Departments>
 
 @{
-        ViewBag.Title = "Index";
-        Layout = "~/Areas/BaseManage/Views/Shared/_Layout_M.cshtml";
-
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BaseManage/Views/Shared/_Layout_M.cshtml";
+    //OrgnizationManage _orgMg = new OrgnizationManage();
 }
 
 <h2>Index</h2>
@@ -33,13 +33,13 @@
             @Html.DisplayFor(modelItem => item.DepartName)
         </td>
         <td>
-            @{ 
-                OrgnizationManage _orgMg = new OrgnizationManage();
+            @*@{ 
+               
                 item.Org=_orgMg.Find(item.OrgNo);
                 
                 <span>@item.Org.OrgName</span>
-            }
-            @*@Html.DisplayFor(modelItem => item.Org.OrgName)*@
+            }*@
+            @Html.DisplayFor(modelItem => item.Org.OrgName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.DepartNo }) |

@@ -29,16 +29,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.OrgNo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.OrgNo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.OrgNo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.DepartmentFlag, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.DepartmentFlag, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.DepartmentFlag, "", new { @class = "text-danger" })
+                @*@Html.EditorFor(model => model.OrgNo, new { htmlAttributes = new { @class = "form-control" } })*@
+                @Html.DropDownListFor(model=>model.OrgNo,ViewBag.temp as SelectList)
+                @Html.ValidationMessageFor(model => model.OrgNo, "请选择组织机构信息", new { @class = "text-danger" })
             </div>
         </div>
 

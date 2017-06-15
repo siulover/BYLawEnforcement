@@ -72,11 +72,17 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+           
             Departments departments = db.Find((int)id);
             if (departments == null)
             {
                 return HttpNotFound();
             }
+            OrgnizationManage _orgMg = new OrgnizationManage();
+            Paging<Orgnizations> _page = new Paging<Orgnizations>();
+            _orgMg.FindPageList(_page, null);
+            ViewBag.temp= new SelectList(_page.Items, "OrgNo", "OrgName");
+            //ViewData["temp"] =new SelectList(_page.Items, "OrgNo", "OrgName");
             return View(departments);
         }
 
@@ -121,13 +127,13 @@ namespace BYLawEnforcement.Areas.BaseManage.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Repositorys.DbContext.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Repositorys.DbContext.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }

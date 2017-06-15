@@ -81,7 +81,7 @@ namespace BYLawEnforcement.Areas.BaseManage.Models
             }
 
             pageDpt.Items = Repository.FindPageList(pageDpt.PageSize, pageDpt.PageIndex, out pageDpt.TotalNumber, _where, u => u.DepartNo, _asc).ToList();
-
+            
             return pageDpt;
         }
         /// <summary>
