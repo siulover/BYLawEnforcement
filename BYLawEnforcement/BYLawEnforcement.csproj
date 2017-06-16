@@ -165,6 +165,11 @@
     <Content Include="Areas\BaseManage\Views\Departments\Details.cshtml" />
     <Content Include="Areas\BaseManage\Views\Departments\Edit.cshtml" />
     <Content Include="Areas\BaseManage\Views\Departments\Index.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Officials\Create.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Officials\Delete.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Officials\Details.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Officials\Edit.cshtml" />
+    <Content Include="Areas\BaseManage\Views\Officials\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -182,9 +187,11 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\BaseManage\BaseManageAreaRegistration.cs" />
     <Compile Include="Areas\BaseManage\Controllers\DepartmentsController.cs" />
+    <Compile Include="Areas\BaseManage\Controllers\OfficialsController.cs" />
     <Compile Include="Areas\BaseManage\Controllers\OrgnizationsController.cs" />
     <Compile Include="Areas\BaseManage\Controllers\TestPageController.cs" />
     <Compile Include="Areas\BaseManage\Models\DepartmentManage.cs" />
+    <Compile Include="Areas\BaseManage\Models\OfficialsManage.cs" />
     <Compile Include="Areas\BaseManage\Models\OrgnizationManage.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

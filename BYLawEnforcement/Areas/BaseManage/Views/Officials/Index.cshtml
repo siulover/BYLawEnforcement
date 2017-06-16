@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Model.Officials>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/BaseManage/Views/Shared/_Layout_M.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Offname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dept.DepartName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MobileNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LawForcementNo)
+        </th>
+      
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+           @Html.DisplayFor(modelItem => item.Offname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dept.DepartName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MobileNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LawForcementNo)
+        </td>
+      
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OffNo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OffNo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OffNo })
+        </td>
+    </tr>
+}
+
+</table>

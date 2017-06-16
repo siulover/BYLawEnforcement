@@ -1,0 +1,67 @@
+﻿@model Model.Officials
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/BaseManage/Views/Shared/_Layout_M.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Officials</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dept.DepartName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dept.DepartName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Offname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Offname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MobileNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MobileNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OffPwd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OffPwd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LawForcementNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LawForcementNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OfficialFlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OfficialFlag)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OffNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
